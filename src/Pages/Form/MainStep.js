@@ -7,11 +7,14 @@ import Step5 from './Step5'
 import Step6 from './Step6'
 import WelcomeStep from './WelcomeStep'
 import "./../../css/MainStep.css"
+import { Fade } from 'react-reveal'
 
 const MainStep = () => {
 
     const [currentStep, setCurrentStep] = useState(0)
-    const [formDetails, setFormDetails] = useState({})
+    const [formDetails, setFormDetails] = useState({
+        name: ''
+    })
 
     const stepUp = () => {
         if (currentStep < 6) {
@@ -34,38 +37,62 @@ const MainStep = () => {
         }))
     }
 
+    console.log('form details are', formDetails)
+
     return (
         <div class="main-app">
-            <div class="main-inner-div">
-                {
-                    currentStep === 1 ?
 
-                        <Step1 onChange={onChangeForm} onClick={stepUp}/> :
+            {
+                currentStep === 1 ?
+                    (<>
+                        <Fade top>
+                            <Step1 currentVal={formDetails.name} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                        </Fade>
+                    </>) :
+                    currentStep === 2 ?
+                        (<>
+                            <Fade left>
+                                <Step2 currentVal={formDetails.fatherName} prevVal={formDetails.name} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                            </Fade>
 
-                        currentStep === 2 ?
+                        </>) :
 
-                            <Step2 /> :
+                        currentStep === 3 ?
 
-                            currentStep === 3 ?
+                            (<>
+                                <Fade top>
+                                    <Step3 currentVal={formDetails.address} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                                </Fade>
+                            </>) :
 
-                                <Step3 /> :
+                            currentStep === 4 ?
 
-                                currentStep === 4 ?
+                                (<>
+                                    <Fade top>
+                                        <Step4 currentVal={formDetails.cnicNum} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                                    </Fade>
+                                </>) :
 
-                                    <Step4 /> :
+                                currentStep === 5 ?
 
-                                    currentStep === 5 ?
+                                    (<>
+                                        <Fade top>
+                                            <Step5 currentVal={formDetails.age} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                                        </Fade>
+                                    </>) :
 
-                                        <Step5 /> :
+                                    currentStep === 6 ?
 
-                                        currentStep === 6 ?
+                                    (<>
+                                        <Fade top>
+                                            <Step6 currentVal={formDetails.age} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} />
+                                        </Fade>
+                                    </>) :
 
-                                            <Step6 /> :
+                                        <WelcomeStep onClick={stepUp} />
 
-                                            <WelcomeStep onClick={stepUp} />
+            }
 
-                }
-            </div>
         </div>
     )
 }
