@@ -46,13 +46,13 @@ const MainStep = () => {
                 currentStep === 1 ?
                     (<>
                         <Fade top>
-                            <Step1 currentVal={formDetails.name} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                            <Step1 currentVal={formDetails.name} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} />
                         </Fade>
                     </>) :
                     currentStep === 2 ?
                         (<>
                             <Fade left>
-                                <Step2 currentVal={formDetails.fatherName} prevVal={formDetails.name} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                                <Step2 currentVal={formDetails.fatherName} prevVal={formDetails.name} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} />
                             </Fade>
 
                         </>) :
@@ -61,7 +61,7 @@ const MainStep = () => {
 
                             (<>
                                 <Fade top>
-                                    <Step3 currentVal={formDetails.address} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                                    <Step3 currentVal={formDetails.address} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} />
                                 </Fade>
                             </>) :
 
@@ -69,7 +69,7 @@ const MainStep = () => {
 
                                 (<>
                                     <Fade top>
-                                        <Step4 currentVal={formDetails.cnicNum} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                                        <Step4 currentVal={formDetails.cnicNum} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} />
                                     </Fade>
                                 </>) :
 
@@ -77,7 +77,7 @@ const MainStep = () => {
 
                                     (<>
                                         <Fade top>
-                                            <Step5 currentVal={formDetails.age} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} /> :
+                                            <Step5 currentVal={formDetails.age} onChange={onChangeForm} onClickTop={stepDown} onClickBottom={stepUp} />
                                         </Fade>
                                     </>) :
 
