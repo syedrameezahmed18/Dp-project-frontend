@@ -247,6 +247,7 @@ export default function Account() {
                   handlers={{
                     onClick: () => handleUnsubscription("sms"),
                   }}
+                  isDisabled={isSetting}
                 />
               )}
             </div>
@@ -274,6 +275,7 @@ export default function Account() {
                   handlers={{
                     onClick: () => handleUnsubscription("email"),
                   }}
+                  isDisabled={isSetting}
                 />
               )}
             </div>
@@ -388,10 +390,12 @@ export default function Account() {
                       <Button
                         text="Add"
                         handlers={{ onClick: handleAddBalance }}
+                        isDisabled={isSaving}
                       />
                       <Button
                         text="Cancel"
                         handlers={{ onClick: toggleAddBalanceOpen }}
+                        isDisabled={isSaving}
                       />
                     </div>
                   </>

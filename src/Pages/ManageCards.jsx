@@ -215,12 +215,14 @@ export default function ManageCards() {
                                 setIsUpdateTrue();
                               },
                             }}
+                            isDisabled={isOrdering}
                           />
                           <Button
                             text="Remove"
                             handlers={{
                               onClick: () => handleCardRemove("creditCard"),
                             }}
+                            isDisabled={isOrdering}
                           />
                         </div>
                       </>
@@ -283,12 +285,14 @@ export default function ManageCards() {
                                 setIsUpdateTrue();
                               },
                             }}
+                            isDisabled={isOrdering}
                           />
                           <Button
                             text="Remove"
                             handlers={{
                               onClick: () => handleCardRemove("debitCard"),
                             }}
+                            isDisabled={isOrdering}
                           />
                         </div>
                       </>
