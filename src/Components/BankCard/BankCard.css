@@ -1,0 +1,92 @@
+.bank-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-width: 18rem;
+  max-width: 21rem;
+}
+
+.bank-card--silver {
+  background: linear-gradient(65deg, lightgrey, white 70%, lightgrey);
+}
+
+.bank-card--gold {
+  background: linear-gradient(65deg, gold, white 70%, gold);
+}
+
+.bank-card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bank-card__bank-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.bank-card__card-type {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.bank-card__bank-name span {
+  color: var(--primary-color);
+}
+
+.bank-card__details {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.bank-card__card-validity {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.bank-card__card-validity-text {
+  grid-row: span 2;
+  width: 3rem;
+  font-size: 0.6rem;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.bank-card__card-validity-date-format {
+  font-size: 0.6rem;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.bank-card__card-validity-date {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.bank-card__card-holder-name {
+  margin-top: 0.3rem;
+  display: flex;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.bank-card__card-scheme-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bank-card__card-scheme {
+  height: 1rem;
+}
+
+.bank-card__card-scheme--credit {
+  aspect-ratio: 50/31;
+}
+
+.bank-card__card-scheme--debit {
+  aspect-ratio: 50/16;
+}
+
+.bank-card__card-scheme img {
+  height: 100%;
+  width: 100%;
+}

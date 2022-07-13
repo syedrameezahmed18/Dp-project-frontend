@@ -1,10 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Navigation from "./Navigation/Navigation"
+import "./App.css";
+
+import { AccountProvider } from "./context/AccountContext";
+
+import Navigation from "./Navigation/Navigation";
 
 function App() {
   return (
-    <Navigation />
+    <AccountProvider>
+      <Navigation />
+    </AccountProvider>
   );
 }
 

@@ -1,0 +1,27 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-step__account-type {
+  display: grid;
+  justify-items: center;
+  row-gap: 2rem;
+}
+
+.form-step__account-type-heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form-step__account-type-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 2rem;
+}
+
+.home__creating-account {
+  font-size: 2rem;
+}

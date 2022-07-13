@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+}
+
+.welcome {
+  display: grid;
+  justify-items: center;
+}
+
+.welcome__heading {
+  margin-bottom: 0.2rem;
+}
+
+.welcome__bank-name {
+  color: var(--primary-color);
+}
+
+.welcome__intro-container {
+  margin-bottom: 3rem;
+}
+
+.welcome__intro {
+  font-weight: 400;
+}

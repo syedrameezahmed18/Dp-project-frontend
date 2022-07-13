@@ -1,0 +1,329 @@
+.account {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.account__details {
+  margin-top: 1rem;
+  display: grid;
+  row-gap: 0.5rem;
+  position: relative;
+}
+
+.account__details-heading {
+  color: var(--primary-color);
+}
+
+.account__fetch-status {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account__fetch-error {
+  color: #f82e2e;
+}
+
+.account__personal-details {
+  padding: 1.5rem;
+  background-color: #efefef;
+  border-radius: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 120px 1fr 1.5fr 0.2fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 1rem;
+  box-shadow: 0px 0px 2px 2px black;
+}
+
+.account__personal-details-icon-container {
+  grid-row: span 2;
+  align-self: center;
+}
+
+.account__personal-details-icon,
+.account__bank-details-icon {
+  height: 100px;
+  width: 100px;
+}
+
+.account__personal-detail p {
+  display: grid;
+}
+
+.account__personal-detail-heading,
+.account__bank-detail-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.account__personal-detail-value,
+.account__bank-detail-value {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.account__bank-detail:nth-of-type(4) .account__bank-detail-value {
+  font-weight: bolder;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.account__bank-details {
+  padding: 1.5rem;
+  background-color: beige;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 120px 1fr 1fr;
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+  box-shadow: 0px 0px 2px 2px black;
+}
+
+.account__bank-details-icon-container {
+  grid-row: span 4;
+  align-self: center;
+}
+
+.account__bank-detail {
+}
+
+.account__bank-detail:nth-of-type(5) {
+  display: flex;
+  flex-direction: column;
+}
+
+.account__bank-detail:nth-of-type(6) {
+  display: flex;
+}
+
+.account__bank-detail:nth-of-type(7) {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.account__bank-detail:nth-of-type(8) {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.account__bank-detail p {
+  display: flex;
+  flex-direction: column;
+}
+
+.account__add-balance {
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.account__add-balance-input {
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.account__add-balance-action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  column-gap: 0;
+  row-gap: 1rem;
+  justify-items: center;
+}
+
+.account__change-currency {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.account__change-currency-select {
+  height: 2rem;
+  padding: 0 0.5rem;
+}
+
+.account__change-currency p {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.account__change-currency-action-buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.account__detail-notification-subscriptions-container {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.account__detail-notification-subscriptions {
+}
+
+.account__detail-notification-subscription {
+  display: grid;
+  column-gap: 1rem;
+  grid-auto-flow: column;
+  grid-template-columns: 0.4fr 1fr;
+}
+
+.account__detail-notification-subscription span {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.add-subscription {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.add-subscription__dialog {
+  position: relative;
+  padding: 2rem;
+}
+
+.add-subscription__dialog header h2 {
+  text-align: center;
+}
+
+.add-subscription__close-button {
+  border-radius: 100%;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: white;
+  position: absolute;
+  right: -28px;
+  top: -28px;
+  padding: 0.3rem 1rem;
+  font-size: 2rem;
+}
+
+.add-subscription__dialog main {
+  padding: 1rem 0;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.add-subscription__subscribe {
+  display: grid;
+}
+
+.add-subscription__form {
+  display: grid;
+  row-gap: 0.5rem;
+  justify-items: center;
+  padding-top: 0.5rem;
+}
+
+.add-subscription__input-text {
+  width: 100%;
+  height: 2.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 850px) {
+  .account__bank-detail:nth-of-type(6) {
+    grid-column: span 2;
+  }
+
+  .account__change-currency-action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    column-gap: 0;
+    row-gap: 1rem;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .account__personal-details {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .account__personal-details-icon-container {
+    grid-column: span 2;
+    justify-self: center;
+  }
+
+  .account__bank-details {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .account__bank-details-icon-container {
+    grid-column: span 2;
+    justify-self: center;
+  }
+
+  .account__bank-detail:nth-of-type(4) {
+    grid-column: span 2;
+    justify-self: center;
+    display: grid;
+    justify-items: center;
+  }
+
+  .account__bank-detail:nth-of-type(5) {
+    grid-column: span 2;
+    justify-self: center;
+    display: grid;
+    justify-items: center;
+  }
+
+  .account__bank-detail:nth-of-type(6) {
+    justify-self: center;
+  }
+
+  .account__bank-detail:nth-of-type(7) {
+    justify-self: center;
+    align-items: center;
+  }
+
+  .account__bank-detail:nth-of-type(8) {
+    justify-self: center;
+    align-items: center;
+  }
+
+  .account__add-balance-action-buttons {
+    display: flex;
+    column-gap: 1rem;
+    grid-template-columns: unset;
+    justify-items: unset;
+  }
+
+  .account__change-currency-action-buttons {
+    display: flex;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    justify-items: unset;
+    grid-template-columns: unset;
+  }
+
+  .account__detail-notification-subscriptions-container {
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .account__bank-detail:nth-of-type(7) {
+    grid-column: span 2;
+  }
+
+  .account__bank-detail:nth-of-type(8) {
+    grid-column: span 2;
+  }
+}

@@ -1,0 +1,32 @@
+.form-step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.form-step__left-arrow,
+.form-step__right-arrow {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.form-step__input-container {
+  display: grid;
+  row-gap: 0.5rem;
+  justify-items: center;
+}
+
+.form-step__input-heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form-step__input-text {
+  height: 2.5rem;
+  width: 100%;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}

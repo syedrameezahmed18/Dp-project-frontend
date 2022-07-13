@@ -1,0 +1,53 @@
+.button {
+  border-radius: 0.2rem;
+  width: max-content;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button--primary:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.button--secondary {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.button--secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button--small {
+  padding: 0.4rem 2rem;
+  font-size: 1rem;
+}
+
+.button--medium {
+  padding: 0.5rem 2.5rem;
+  font-size: 1.2rem;
+}
+
+.button--large {
+  padding: 0.6rem 3rem;
+  font-size: 1.4rem;
+}
+
+.button--disabled {
+  background-color: var(--button-disabled-color);
+  border-color: var(--button-disabled-color);
+}
+
+.button--disabled:hover {
+  background-color: var(--button-disabled-color);
+  color: white;
+  cursor: initial;
+}
