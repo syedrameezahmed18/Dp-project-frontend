@@ -36,7 +36,7 @@ export default function ManageCards() {
       getAccount();
     }
 
-    if (account?.name === null) {
+    if (!account?.name) {
       navigate("/");
       return window.location.reload();
     }

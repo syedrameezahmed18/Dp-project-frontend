@@ -29,7 +29,7 @@ export default function Transactions() {
       getAccount();
     }
 
-    if (account?.name === null) {
+    if (!account?.name) {
       navigate("/");
       return window.location.reload();
     }
@@ -89,7 +89,7 @@ export default function Transactions() {
 
       const updateObject = {
         ...formDetails,
-        senderAccountNumber: account.acccountNumber,
+        senderAccountNumber: account.accountNumber,
       };
 
       try {

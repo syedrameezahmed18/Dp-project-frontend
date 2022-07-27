@@ -1,4 +1,4 @@
-import { useCallback, useState, useMemo } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import AccountService from "../services/account";
@@ -42,60 +42,51 @@ export default function Home() {
     let result;
 
     const accountServices = {
-      1: AccountService.setName({ name: formDetails.name }),
-      2: AccountService.setFatherName({ fatherName: formDetails.fatherName }),
-      3: AccountService.setAddress({ address: formDetails.address }),
-      4: AccountService.setCnicNum({ cnicNum: formDetails.cnicNum }),
-      5: AccountService.setAge({ age: formDetails.age }),
+      1: {
+        formField: formDetails.name,
+        service: AccountService.setName({ name: formDetails.name }),
+        errorMessage: "Please enter name to continue.",
+      },
+      2: {
+        formField: formDetails.fatherName,
+        service: AccountService.setFatherName({
+          fatherName: formDetails.fatherName,
+        }),
+        errorMessage: "Please enter father name to continue.",
+      },
+      3: {
+        formField: formDetails.address,
+        service: AccountService.setAddress({ address: formDetails.address }),
+        errorMessage: "Please enter address to continue.",
+      },
+      4: {
+        formField: formDetails.cnicNum,
+        service: AccountService.setCnicNum({ cnicNum: formDetails.cnicNum }),
+        errorMessage: "Please enter CNIC number to continue.",
+      },
+      5: {
+        formField: formDetails.age,
+        service: AccountService.setAge({ age: formDetails.age }),
+        errorMessage: "Please enter age to continue.",
+      },
     };
 
     async function executeAccountService(serviceType) {
       try {
         setIsDataSending(true);
-        result = await accountServices[serviceType];
+        result = await accountServices[serviceType].service;
         setIsDataSending(false);
       } catch (error) {
         setIsDataSending(false);
         return alert("Error!\nServer is down.");
       }
     }
-    switch (currentStep) {
-      case 1:
-        if (!formDetails.name) return alert("Please enter name to continue.");
 
-        await executeAccountService(1);
-
-        break;
-      case 2:
-        if (!formDetails.fatherName)
-          return alert("Please enter father name to continue.");
-
-        await executeAccountService(2);
-
-        break;
-      case 3:
-        if (!formDetails.address)
-          return alert("Please enter address to continue.");
-
-        await executeAccountService(3);
-
-        break;
-      case 4:
-        if (!formDetails.cnicNum)
-          return alert("Please enter CNIC number to continue.");
-
-        await executeAccountService(4);
-
-        break;
-      case 5:
-        if (!formDetails.age) return alert("Please enter age to continue.");
-
-        await executeAccountService(5);
-
-        break;
-      default:
-        return;
+    if (!accountServices[currentStep].formField) {
+      return alert(accountServices[currentStep].errorMessage);
     }
+
+    await executeAccountService(currentStep);
 
     // console.log("result:", result);
 
