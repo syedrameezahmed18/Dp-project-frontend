@@ -97,7 +97,7 @@ export default function Account() {
     try {
       setIsSaving(true);
 
-      await AccountService.changeCurrencyUnit(
+      const result = await AccountService.changeCurrencyUnit(
         formDetails.currencyUnit.toLowerCase()
       );
 
